@@ -16,14 +16,14 @@
 
 							function hapusSemua(csrf) {
 								if(confirm("Apakah anda yakin? tindakan ini akan menghapus seluruh pesan yang telah anda kirim")) {
-									return document.location.href = "http://kpps.test/forum/delete-all?_token=" + csrf;
+									return document.location.href = "{{ env('APP_URL') }}/forum/delete-all?_token=" + csrf;
 								} else {
 									return 0;
 								}
 							}
 
 							function refreshHalaman() {
-								return $('#kolomChat').load('http://kpps.test/forum-refresh');
+								return $('#kolomChat').load('{{ env("APP_URL") }}/forum-refresh');
 							}
 					    	
 					    </script>
@@ -78,7 +78,7 @@
 
 							function hapusForum(id, csrf) {
 								if(confirm("Hapus Pesan?")) {
-									return document.location.href = "http://kpps.test/forum/delete?id=" + id + "&_token=" + csrf;
+									return document.location.href = "{{ env('APP_URL') }}/forum/delete?id=" + id + "&_token=" + csrf;
 								} else {
 									return 0;
 								}
@@ -126,7 +126,7 @@
 		    });
 
 		    setInterval(function(){
-			   	$('#kolomChat').load('http://kpps.test/forum-refresh');
+			   	$('#kolomChat').load('{{ env("APP_URL") }}/forum-refresh');
 			}, 1000);
 
         });

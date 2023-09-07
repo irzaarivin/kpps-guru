@@ -161,7 +161,7 @@ class AchievementSeeder extends Seeder
 
         Achievement::create([
             'aspek' => 'non-akademik',
-            'prestasi' => 'Ketua Osis/PK',
+            'prestasi' => 'Ketua OSIS/MPK',
             'poin' => '20'
         ]);
 

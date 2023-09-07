@@ -1,0 +1,21 @@
+Server: sql12.freemysqlhosting.net
+Name: sql12603847
+Username: sql12603847
+Password: pS1z3TkqCb
+Port number: 3306
+
+DB_CONNECTION=mysql
+DB_HOST=sql12.freemysqlhosting.net
+DB_PORT=3306
+DB_DATABASE=sql12603847
+DB_USERNAME=sql12603847
+DB_PASSWORD=pS1z3TkqCb
+
+DEFAULT
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=kpps
+DB_USERNAME=root
+DB_PASSWORD=

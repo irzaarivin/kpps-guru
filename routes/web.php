@@ -32,6 +32,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/docs-public', [HomeController::class, 'docsPublic']);
     Route::get('/docs-public/', [HomeController::class, 'docsPublic']);
 
+    Route::get('/report', [HomeController::class, 'report']);
+    Route::get('/report/', [HomeController::class, 'report']);
+
     Route::post('/docs', [HomeController::class, 'store']);
     Route::post('/docs-public', [HomeController::class, 'store']);
 

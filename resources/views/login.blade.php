@@ -18,6 +18,24 @@
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
 
+    <style>
+    	.spinBtn {
+			animation: spin 3s linear infinite;
+			border: 7px dashed white;
+			padding: 10px;
+			background-color: transparent;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			margin: 0 auto;
+		}
+
+		@keyframes spin  {
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+    </style>
 </head> 
 
 <body class="app app-login p-0">
@@ -55,8 +73,19 @@
 								</div><!--//extra-->
 							</div><!--//form-group-->
 							<div class="text-center">
-								<button type="submit" class="btn app-btn-primary w-100 theme-btn mx-auto">Log In</button>
+								<button id="tblLgn" type="submit" class="btn text-center app-btn-primary w-100 theme-btn mx-auto">Log In</button>
 							</div>
+							<script>
+								
+								let tblLgn = document.getElementById("tblLgn");
+
+								tblLgn.addEventListener("click", function(){
+									let tblLgn = document.getElementById("tblLgn");
+
+									tblLgn.innerHTML = '<div class="spinBtn"></div>';
+								});
+
+							</script>
 						</form>
 						
 						<div class="auth-option text-center pt-5">Belum memiliki akun? <a class="text-link" href="register">Register</a></div>

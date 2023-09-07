@@ -102,6 +102,54 @@ class HomeController extends Controller
         ]);
     }
 
+    public function report() {
+
+        $statXiiMm = DB::table('students')->where('kelas', 'xiimm')->count();
+        $statXiiRpl = DB::table('students')->where('kelas', 'xiirpl')->count();
+        $statXiiPftv = DB::table('students')->where('kelas', 'xiipftv')->count();
+
+        $statXiMm = DB::table('students')->where('kelas', 'ximm')->count();
+        $statXiRpl = DB::table('students')->where('kelas', 'xirpl')->count();
+        $statXiPftv = DB::table('students')->where('kelas', 'xipftv')->count();
+
+        $statXMm1 = DB::table('students')->where('kelas', 'xmm1')->count();
+        $statXRpl1 = DB::table('students')->where('kelas', 'xrpl1')->count();
+        $statXPftv1 = DB::table('students')->where('kelas', 'xpftv1')->count();
+        $statXMm2 = DB::table('students')->where('kelas', 'xmm2')->count();
+        $statXRpl2 = DB::table('students')->where('kelas', 'xrpl2')->count();
+        $statXPftv2 = DB::table('students')->where('kelas', 'xpftv2')->count();
+
+        $prestasiMm = DB::table('students')->where('jurusan', 'mm')->sum('prestasi');
+        $prestasiRpl = DB::table('students')->where('jurusan', 'rpl')->sum('prestasi');
+        $prestasiPftv = DB::table('students')->where('jurusan', 'pftv')->sum('prestasi');
+
+        $pelanggaranMm = DB::table('students')->where('jurusan', 'mm')->sum('pelanggaran');
+        $pelanggaranRpl = DB::table('students')->where('jurusan', 'rpl')->sum('pelanggaran');
+        $pelanggaranPftv = DB::table('students')->where('jurusan', 'pftv')->sum('pelanggaran');
+
+        return view('report', [
+            'title' => 'Dokumen Publik',
+            'statXiiMm' => $statXiiMm,
+            'statXiiRpl' => $statXiiRpl,
+            'statXiiPftv' => $statXiiPftv,
+            'statXiMm' => $statXiMm,
+            'statXiRpl' => $statXiRpl,
+            'statXiPftv' => $statXiPftv,
+            'statXMm1' => $statXMm1,
+            'statXRpl1' => $statXRpl1,
+            'statXPftv1' => $statXPftv1,
+            'statXMm2' => $statXMm2,
+            'statXRpl2' => $statXRpl2,
+            'statXPftv2' => $statXPftv2,
+            'prestasiMm' => $prestasiMm,
+            'prestasiRpl' => $prestasiRpl,
+            'prestasiPftv' => $prestasiPftv,
+            'pelanggaranMm' => $pelanggaranMm,
+            'pelanggaranRpl' => $pelanggaranRpl,
+            'pelanggaranPftv' => $pelanggaranPftv
+        ]);
+    }
+
     public function violations() {
         return view('violations', [
             'title' => 'Poin Pelanggaran',

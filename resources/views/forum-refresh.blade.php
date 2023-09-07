@@ -8,14 +8,14 @@
 
 			function hapusSemua(csrf) {
 				if(confirm("Apakah anda yakin? tindakan ini akan menghapus seluruh pesan yang telah anda kirim")) {
-					return document.location.href = "http://kpps.test/forum/delete-all?_token=" + csrf;
+					return document.location.href = "{{ env('APP_URL') }}/forum/delete-all?_token=" + csrf;
 				} else {
 					return 0;
 				}
 			}
 
 			function refreshHalaman() {
-				return $('#kolomChat').load('http://kpps.test/forum-refresh');
+				return $('#kolomChat').load('{{ env("APP_URL") }}/forum-refresh');
 			}
 	    	
 	    </script>
@@ -27,7 +27,7 @@
 									  	<path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
 									</svg> Refresh</button>
 			    <button class="action-link btn my-4" style="background-color: red; color: white;" onclick="return hapusSemua('{{ csrf_token() }}');">Hapus Semua Chat Saya</button>
-	        </div><!--//page-utilities-->
+	        </div>
 	    </div>
     </div>
 </div>
@@ -70,7 +70,7 @@
 
 			function hapusForum(id, csrf) {
 				if(confirm("Hapus Pesan?")) {
-					return document.location.href = "http://kpps.test/forum/delete?id=" + id + "&_token=" + csrf;
+					return document.location.href = "{{ env('APP_URL') }}/forum/delete?id=" + id + "&_token=" + csrf;
 				} else {
 					return 0
 				}
